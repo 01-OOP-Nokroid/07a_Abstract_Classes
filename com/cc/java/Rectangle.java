@@ -15,7 +15,7 @@ public class Rectangle extends Shape // rechtsklick > Quellaktion > Override
     @Override
     public double area() 
     {
-        return 0;
+        return width * height;
     }
     
 }
