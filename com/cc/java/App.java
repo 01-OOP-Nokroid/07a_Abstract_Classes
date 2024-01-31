@@ -1,6 +1,7 @@
 package com.cc.java;
 
-public class App {
+public class App
+{
     
     public static void main(String[] args)
     {
@@ -13,15 +14,27 @@ public class App {
         output("Fläche Kreis: " + circle.area());
         output("Fläche Dreieck: " + triangle.area());
 
+        // Das geht jetzt nicht mehr ... Abstraktion
+        // Shape shape = new Shape();
+
         output("---------Differenzen--------");
         output("Diff. r-t: " + areaDiff(rectangle, triangle));
+        output("Diff. r-c: " + areaDiff(rectangle, circle));
+        output("Diff. c-r: " + areaDiff(circle, rectangle));
+        output("Diff. c-t: " + areaDiff(circle, triangle));
+        output("Diff. t-t: " + areaDiff(triangle, triangle));
     }
 
-    
+    // 1. Iteration: ggf. 1000x überladen
+    // private static double areaDiff(Rectangle r, Triangle t)
+    // {
+    //     return r.area() - t.area();
+    // }
 
-    private static double areaDiff(Rectangle r, Triangle t)
+    // 2. Iteration: Polymorphie - besser
+    private static double areaDiff(Shape s1, Shape s2)
     {
-        return r.area() - t.area();
+        return s1.area() - s2.area();
     }
 
    
